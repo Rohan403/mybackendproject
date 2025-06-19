@@ -1,7 +1,15 @@
 import "dotenv/config";
 import connectDB from "./db/index.js";
 
-connectDB();
+connectDB()
+  .then(() => {
+    app.listen(process.env.PORT, () => {
+      console.log(`Server running at post ${process.env.PORT}`);
+    });
+  })
+  .catch((err) => {
+    console.log("Error", err);
+  });
 
 /*
 import express from "express";

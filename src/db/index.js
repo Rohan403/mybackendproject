@@ -12,7 +12,7 @@ const connectDB = async () => {
     });
   } catch (error) {
     console.log("Error:", error);
-    path.exit(1);
+    process.exit(1);
   }
 };
 export default connectDB;
